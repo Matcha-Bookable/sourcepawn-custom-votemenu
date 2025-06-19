@@ -2545,7 +2545,7 @@ public void Config_Load()
 				strMapListLocation = "cfg/comp/maps.txt";
 
 				g_hArrayVoteMapList[iVote] = CreateArray(MAX_NAME_LENGTH);
-				ReadFullMaplist(g_hArrayVoteMapList[iVote], strMapListLocation);
+				ReadFullMaplist(view_as<ArrayList>(g_hArrayVoteMapList[iVote]), strMapListLocation);
 			}
 			case VoteType_List:
 			{
