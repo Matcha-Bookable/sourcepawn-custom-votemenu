@@ -3,7 +3,7 @@ name: Compile Plugin
 on:
   push:
     branches: [ main ]
-  workflow-dispatch:
+  workflow_dispatch:
     inputs:
       SM_VERSION:
         description: 'Sourcemod Version'
