@@ -16,5 +16,5 @@ This is specifically modified to shrink the docker image size for [Matcha-Bookab
 
 ### Credits
 
-[caxanga334/cvreduxmodified](https://github.com/caxanga334/cvreduxmodified) - for the maintained version of cv and the workflow
-[ReFlexPoison/custom-vote](https://forums.alliedmods.net/showthread.php?t=235115) - for the original version of cv
+- [caxanga334/cvreduxmodified](https://github.com/caxanga334/cvreduxmodified) - for the maintained version of cv and the workflow
+- [ReFlexPoison/custom-vote](https://forums.alliedmods.net/showthread.php?t=235115) - for the original version of cv
