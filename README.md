@@ -1,5 +1,4 @@
 [![Compile Plugin](https://github.com/Matcha-Bookable/sourcepawn-custom-votemenu/actions/workflows/build.yaml/badge.svg)](https://github.com/Matcha-Bookable/sourcepawn-custom-votemenu/actions/workflows/build.yaml)
-
 # sourcepawn-custom-votemenu
 Minor modification from the popular custom votemenu, which are currently in service for Matcha Bookable.
 
