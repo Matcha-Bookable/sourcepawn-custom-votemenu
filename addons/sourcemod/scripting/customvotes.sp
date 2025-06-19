@@ -1548,8 +1548,8 @@ public int VoteHandler_Map(Handle hMenu, MenuAction iAction, int iVoter, int iPa
 		for (int i = 1; i <= MaxClients; ++i)
 		{
 			g_bVoteForMap[i][g_iCurrentVoteIndex][g_iCurrentVoteMap] = false;
-			g_iCurrentVoteIndex = g_iCurrentVoteMap = -1;
 		}
+		g_iCurrentVoteIndex = g_iCurrentVoteMap = -1;
 	}
 	return 0;
 }
@@ -2540,8 +2540,12 @@ public void Config_Load()
 				char strMapList[24];
 				KvGetString(hKeyValues, "maplist", strMapList, sizeof(strMapList), "default");
 
+				char strMapListLocation[64];
+
+				strMapListLocation = "cfg/comp/maps.txt";
+
 				g_hArrayVoteMapList[iVote] = CreateArray(MAX_NAME_LENGTH);
-				ReadMapList(g_hArrayVoteMapList[iVote], _, strMapList, MAPLIST_FLAG_CLEARARRAY);
+				ReadFullMaplist(g_hArrayVoteMapList[iVote], strMapListLocation);
 			}
 			case VoteType_List:
 			{
@@ -3058,4 +3062,18 @@ stock void FormatOptionString(int iVote, int iOption, char[] strBuffer, int iBuf
 stock void QuoteString(char[] strBuffer, int iBuffersize)
 {
 	Format(strBuffer, iBuffersize + 4, "\"%s\"", strBuffer);
+}
+
+void ReadFullMaplist(ArrayList buffer, const char[] path) {
+    File maplist = OpenFile(path, "rt");
+    char line[1024];
+    while (maplist.ReadLine(line, sizeof(line))) {
+        // Remove trailing newline and carriage return
+        int len = strlen(line);
+        while (len > 0 && (line[len-1] == '\n' || line[len-1] == '\r')) {
+            line[--len] = '\0';
+        }
+        buffer.PushString(line);
+    }
+    maplist.Close();
 }
